@@ -1,4 +1,4 @@
-# Backend de Produtores Rurais
+# Projeto Teste - Brain Agriculture 🏆
 
 Um projeto baseado em NestJS, TypeScript, TypeORM, PostgreSQL, Swagger e Docker  para cadastro de produtores rurais e seus produtos plantados.
 
