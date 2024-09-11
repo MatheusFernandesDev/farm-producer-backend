@@ -11,6 +11,11 @@ export class ListAllCropsPlantedService {
   ) {}
 
   async execute() {
-    return this.cropsPlantedRepository.find();
+    return this.cropsPlantedRepository.find({
+      select: {
+        id: true,
+        crop_name: true,
+      },
+    });
   }
 }

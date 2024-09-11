@@ -1,8 +1,4 @@
-import {
-  Injectable,
-  ConflictException,
-  BadRequestException,
-} from '@nestjs/common';
+import { Injectable, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, DataSource } from 'typeorm';
 import {
@@ -31,7 +27,7 @@ export class CreateProducerFarmService {
       !cpfValidator.isValid(dto.cpf_cnpj) &&
       !cnpjValidator.isValid(dto.cpf_cnpj)
     ) {
-      throw new BadRequestException('CPF/CNPJ inválido');
+      throw new BadRequestException('CPF ou CNPJ inválido');
     }
 
     // Verificação de área
@@ -48,7 +44,7 @@ export class CreateProducerFarmService {
         where: { cpf_cnpj: dto.cpf_cnpj },
       });
       if (existingProducer) {
-        throw new ConflictException('CPF/CNPJ já cadastrado.');
+        throw new BadRequestException('CPF ou CNPJ já cadastrado.');
       }
 
       const newProducerFarm = new ProducerFarmEntity();

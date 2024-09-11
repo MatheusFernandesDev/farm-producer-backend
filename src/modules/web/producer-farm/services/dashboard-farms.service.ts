@@ -62,8 +62,8 @@ export class DashboardProducerFarmService {
       farmsByState,
       cropCounts,
       landUsage: {
-        cultivated: landUsage.cultivated || 0,
-        vegetation: landUsage.vegetation || 0,
+        Agricultável: landUsage.cultivated || 0,
+        Vegetação: landUsage.vegetation || 0,
       },
     };
   }

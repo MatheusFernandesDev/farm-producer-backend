@@ -13,6 +13,11 @@ export class CreateProducerFarmDto {
   @IsNotEmpty({ message: 'O CPF/CNPJ é um campo obrigatório' })
   cpf_cnpj: string;
 
+  @ApiProperty({ example: 'Matheus', description: 'Nome do Produtor' })
+  @IsString({ message: 'O nome do Produtor deve ser de caracteres' })
+  @IsNotEmpty({ message: 'O nome do Produtor é um campo obrigatório' })
+  producer_name: string;
+
   @ApiProperty({
     example: 'Fazenda do Matheus',
     description: 'Nome da Fazenda',
@@ -38,18 +43,11 @@ export class CreateProducerFarmDto {
 
   @ApiProperty({ example: 50, description: 'Área cultivada em hectares' })
   @IsNumber({}, { message: 'A área cultivada deve ser um número' })
-  @IsOptional()
   cultivated_area_hectares: number;
 
   @ApiProperty({ example: 20, description: 'Área de vegetação em hectares' })
   @IsNumber({}, { message: 'A área de vegetação deve ser um número' })
-  @IsOptional()
   vegetation_area_hectares: number;
-
-  @ApiProperty({ example: 'Matheus', description: 'Nome do Produtor' })
-  @IsString({ message: 'O nome do Produtor deve ser de caracteres' })
-  @IsNotEmpty({ message: 'O nome do Produtor é um campo obrigatório' })
-  producer_name: string;
 
   @ApiProperty({
     example: [
