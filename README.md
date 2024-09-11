@@ -1,6 +1,6 @@
 # Backend de Produtores Rurais
 
-Um projeto baseado em NestJS, TypeScript, TypeORM, PostgreSQL e Docker para cadastro de produtores rurais e seus produtos plantados.
+Um projeto baseado em NestJS, TypeScript, TypeORM, PostgreSQL, Swagger e Docker  para cadastro de produtores rurais e seus produtos plantados.
 
 ## Tecnologias Utilizadas
 
